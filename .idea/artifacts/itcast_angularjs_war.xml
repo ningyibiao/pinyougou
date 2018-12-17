@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="itcast-angularjs:war">
+    <output-path>$PROJECT_DIR$/itcast-angularjs/target</output-path>
+    <root id="archive" name="itcast-angularjs-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="itcast-angularjs:war exploded" />
+    </root>
+  </artifact>
+</component>
