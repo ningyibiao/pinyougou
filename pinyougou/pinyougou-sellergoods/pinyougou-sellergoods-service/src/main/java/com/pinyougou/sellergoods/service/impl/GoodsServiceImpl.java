@@ -112,26 +112,6 @@ public class GoodsServiceImpl extends BaseServiceImpl<TbGoods> implements GoodsS
         }
     }
 
-    /*private void setItemValue(TbItem item, Goods goods) {
-        //商品分类 来自 商品spu的第3级商品分类id
-        item.setCategoryid(goods.getGoods().getCategory3Id());
-        TbItemCat itemCat = itemCatMapper.selectByPrimaryKey(item.getCategoryid());
-        item.setCategory(itemCat.getName());
-        //创建时间
-        item.setCreateTime(new Date());
-        item.setUpdateTime(item.getCreateTime());
-
-        //卖家
-        item.setSellerId(goods.getGoods().getSellerId());
-        //商家名称
-        TbSeller seller =
-                sellerMapper.selectByPrimaryKey(goods.getGoods().getSellerId());
-        item.setSeller(seller.getName());
-        //品牌名称
-        TbBrand brand =
-                brandMapper.selectByPrimaryKey(goods.getGoods().getBrandId());
-        item.setBrand(brand.getName());
-    }*/
     private void setItemValue(TbItem item, Goods goods) {
         // 图片
         List<Map> imgList =
@@ -164,22 +144,7 @@ public class GoodsServiceImpl extends BaseServiceImpl<TbGoods> implements GoodsS
 
     @Override
     public Goods findGoodsById(Long id) {
-        Goods goods = new Goods();
-        //查询商品SPU
-        TbGoods tbGoods = goodsMapper.selectByPrimaryKey(id);
-        goods.setGoods(tbGoods);
-
-        //查询商品描述
-        TbGoodsDesc tbGoodsDesc = goodsDescMapper.selectByPrimaryKey(id);
-        goods.setGoodsDesc(tbGoodsDesc);
-
-        //查询商品SKU列表
-        Example example = new Example(TbItem.class);
-        example.createCriteria().andEqualTo("goodsId", id);
-        List<TbItem> itemList = itemMapper.selectByExample(example);
-        goods.setItemList(itemList);
-
-        return goods;
+        return findGoodsByIdAndStatus(id, null);
     }
 
     @Override
@@ -245,7 +210,43 @@ public class GoodsServiceImpl extends BaseServiceImpl<TbGoods> implements GoodsS
 
             itemMapper.updateByExampleSelective(item, itemExample);
         }
+    }
 
+    /**
+     * 根据商品spu id查询商品基本、描述、sku列表（根据是否默认排序，降序排序），并加载商品1、2、3级商品分类中文名称。
+     *
+     * @param goodsId    商品spu id
+     * @param itemStatus 商品spu 状态
+     * @return 商品信息
+     */
+    @Override
+    public Goods findGoodsByIdAndStatus(Long goodsId, String itemStatus) {
+        Goods goods = new Goods();
+        /**
+         * SELECT * FROM tb_goods WHERE id=?;
+         * SELECT * FROM tb_goods_desc WHERE goods_id=?;
+         * SELECT * FROM tb_item WHERE goods_id=?;
+         */
+        //1.基本信息
+        goods.setGoods(findOne(goodsId));
+        //2.描述信息
+        goods.setGoodsDesc(goodsDescMapper.selectByPrimaryKey(goodsId));
+        //3.根据spu id 查询sku列表
+        Example example = new Example(TbItem.class);
+        Example.Criteria criteria = example.createCriteria();
 
+        criteria.andEqualTo("goodsId", goodsId);
+
+        if (itemStatus != null) {
+            criteria.andEqualTo("status", itemStatus);
+        }
+
+        //根据是否默认降序排序sku列表
+        example.orderBy("isDefault").desc();
+
+        List<TbItem> itemList = itemMapper.selectByExample(example);
+        goods.setItemList(itemList);
+
+        return goods;
     }
 }

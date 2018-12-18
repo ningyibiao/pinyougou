@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/pinyougou/pinyougou-content/pinyougou-content-interface/pinyougou-content-interface.iml" filepath="$PROJECT_DIR$/pinyougou/pinyougou-content/pinyougou-content-interface/pinyougou-content-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/pinyougou/pinyougou-content/pinyougou-content-service/pinyougou-content-service.iml" filepath="$PROJECT_DIR$/pinyougou/pinyougou-content/pinyougou-content-service/pinyougou-content-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/pinyougou/pinyougou-dao/pinyougou-dao.iml" filepath="$PROJECT_DIR$/pinyougou/pinyougou-dao/pinyougou-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pinyougou/pinyougou-item-web/pinyougou-item-web.iml" filepath="$PROJECT_DIR$/pinyougou/pinyougou-item-web/pinyougou-item-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/pinyougou/pinyougou-manage-web/pinyougou-manage-web.iml" filepath="$PROJECT_DIR$/pinyougou/pinyougou-manage-web/pinyougou-manage-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/pinyougou/pinyougou-pojo/pinyougou-pojo.iml" filepath="$PROJECT_DIR$/pinyougou/pinyougou-pojo/pinyougou-pojo.iml" />
       <module fileurl="file://$PROJECT_DIR$/pinyougou/pinyougou-portal-web/pinyougou-portal-web.iml" filepath="$PROJECT_DIR$/pinyougou/pinyougou-portal-web/pinyougou-portal-web.iml" />
