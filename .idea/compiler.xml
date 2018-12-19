@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="fastdfs_client" />
+        <module name="itcast-activemq" />
         <module name="itcast-angularjs" />
         <module name="itcast-fastdfs" />
         <module name="itcast-freemarker" />
@@ -30,6 +31,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="fastdfs_client" target="1.5" />
+      <module name="itcast-activemq" target="1.8" />
       <module name="itcast-angularjs" target="1.5" />
       <module name="itcast-fastdfs" target="1.8" />
       <module name="itcast-freemarker" target="1.8" />
