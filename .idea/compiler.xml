@@ -11,6 +11,7 @@
         <module name="itcast-angularjs" />
         <module name="itcast-fastdfs" />
         <module name="itcast-freemarker" />
+        <module name="itcast-spring-boot" />
         <module name="itcast-spring-security" />
         <module name="pinyougou-common" />
         <module name="pinyougou-content-interface" />
@@ -35,6 +36,7 @@
       <module name="itcast-angularjs" target="1.5" />
       <module name="itcast-fastdfs" target="1.8" />
       <module name="itcast-freemarker" target="1.8" />
+      <module name="itcast-spring-boot" target="1.8" />
       <module name="itcast-spring-security" target="1.8" />
       <module name="pinyougou" target="1.8" />
       <module name="pinyougou-common" target="1.8" />

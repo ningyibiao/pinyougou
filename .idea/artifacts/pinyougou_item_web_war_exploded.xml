@@ -15,7 +15,6 @@
           </element>
           <element id="library" level="project" name="Maven: javax.persistence:persistence-api:1.0" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-solr:1.5.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.1.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.11.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.1" />
           <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
@@ -53,6 +52,13 @@
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.44" />
           <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.23" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.activemq:activemq-client:5.14.3" />
+          <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" />
+          <element id="library" level="project" name="Maven: org.fusesource.hawtbuf:hawtbuf:1.11" />
+          <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jms:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-messaging:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.10.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

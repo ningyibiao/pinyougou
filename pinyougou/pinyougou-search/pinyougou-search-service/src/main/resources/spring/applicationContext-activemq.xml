@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--真正可以产生Connection的ConnectionFactory,由对应的JMS服务厂商提供-->
+    <bean id="targetConnectionFactory"
+          class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://192.168.12.168:61616"/>
+    </bean>
+
+    <!--Spring用于管理真正的ConnectionFactory的ConnectionFactory-->
+    <bean id="jmsConnectionFactory"
+          class="org.springframework.jms.connection.SingleConnectionFactory">
+        <!--目标ConnectionFactory对应真实的可以产生JMS Connection的ConnectionFactory-->
+        <property name="targetConnectionFactory" ref="targetConnectionFactory"/>
+    </bean>
+
+    <!--队列模式,搜索系统在商品审核后接收的商品列表队列-->
+    <bean id="itemSolrQueue"
+          class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="pinyougou_item_solr_queue"/>
+    </bean>
+
+    <!-- messageListener 实现类 -->
+    <bean id="itemImportMessageListener"
+          class="com.pinyougou.search.activemq.listener.ItemImportMessageListener"/>
+    <!--配置一个jms监听器-->
+    <bean id="jmsImportContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="itemSolrQueue"/>
+        <property name="messageListener" ref="itemImportMessageListener"/>
+    </bean>
+
+    <!--队列模式,搜索系统在商品删除后接收的商品id队列-->
+    <bean id="itemSolrDeleteQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="pinyougou_item_solr_delete_queue"/>
+    </bean>
+
+    <!-- messageListener 实现类 -->
+    <bean id="itemDeleteMessageListener"
+          class="com.pinyougou.search.activemq.listener.ItemDeleteMessageListener"/>
+
+    <!--配置一个jms监听器-->
+    <bean id="jmsDeleteContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="destination" ref="itemSolrDeleteQueue"/>
+        <property name="messageListener" ref="itemDeleteMessageListener"/>
+    </bean>
+
+</beans>

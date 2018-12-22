@@ -20,8 +20,7 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     <property name="minIdle" value="5"/>
     </bean>
     <!-- 配置 sqlSessionFactory -->
-    <bean id="sqlSessionFactory"
-          class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!-- 数据源 -->
         <property name="dataSource" ref="dataSource"/>
         <!-- mybatis 总配置文件 -->

@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/itcast-angularjs/itcast-angularjs.iml" filepath="$PROJECT_DIR$/itcast-angularjs/itcast-angularjs.iml" />
       <module fileurl="file://$PROJECT_DIR$/itcast-fastdfs/itcast-fastdfs.iml" filepath="$PROJECT_DIR$/itcast-fastdfs/itcast-fastdfs.iml" />
       <module fileurl="file://$PROJECT_DIR$/itcast-freemarker/itcast-freemarker.iml" filepath="$PROJECT_DIR$/itcast-freemarker/itcast-freemarker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/itcast-spring-boot/itcast-spring-boot.iml" filepath="$PROJECT_DIR$/itcast-spring-boot/itcast-spring-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/itcast-spring-security/itcast-spring-security.iml" filepath="$PROJECT_DIR$/itcast-spring-security/itcast-spring-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/pinyougou/pinyougou.iml" filepath="$PROJECT_DIR$/pinyougou/pinyougou.iml" />
       <module fileurl="file://$PROJECT_DIR$/pinyougou/pinyougou-common/pinyougou-common.iml" filepath="$PROJECT_DIR$/pinyougou/pinyougou-common/pinyougou-common.iml" />

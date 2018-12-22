@@ -23,6 +23,7 @@
         <option value="$PROJECT_DIR$/pinyougou/pinyougou-search-web/pom.xml" />
         <option value="$PROJECT_DIR$/itcast-freemarker/pom.xml" />
         <option value="$PROJECT_DIR$/itcast-activemq/pom.xml" />
+        <option value="$PROJECT_DIR$/itcast-spring-boot/pom.xml" />
       </list>
     </option>
   </component>
